@@ -6,9 +6,9 @@ const encrypt = (payload, secret) => {
   return token;
 };
 
-const decrypt = (token) => {
+const decrypt = (token, secret) => {
   // return decoded payload
-  const decoded = jwt.verify(token, process.env.SECRET_KEY);
+  const decoded = jwt.verify(token, secret);
   if (decoded) {
     return decoded;
   } else {
